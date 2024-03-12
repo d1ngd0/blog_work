@@ -224,3 +224,108 @@ func genPeople(numPeople int) []Person {
 	}
 	return people
 }
+
+func BenchmarkNonEmptyAdjustedSlice1000(b *testing.B) {
+	// sshhh pretend we don't know how many their
+	// are.
+	people := genPeople(1000)
+	b.ReportAllocs()
+	b.ResetTimer()
+
+	for i := 0; i < b.N; i++ {
+		names := make([]string, 0, 1000)
+		for _, person := range people {
+			names = append(names, person.name)
+		}
+	}
+}
+
+func BenchmarkNonEmptyAdjustedSlice500(b *testing.B) {
+	// sshhh pretend we don't know how many their
+	// are.
+	people := genPeople(500)
+	b.ReportAllocs()
+	b.ResetTimer()
+
+	for i := 0; i < b.N; i++ {
+		names := make([]string, 0, 1000)
+		for _, person := range people {
+			names = append(names, person.name)
+		}
+	}
+}
+
+func BenchmarkNonEmptyAdjustedSlice250(b *testing.B) {
+	// sshhh pretend we don't know how many their
+	// are.
+	people := genPeople(250)
+	b.ReportAllocs()
+	b.ResetTimer()
+
+	for i := 0; i < b.N; i++ {
+		names := make([]string, 0, 1000)
+		for _, person := range people {
+			names = append(names, person.name)
+		}
+	}
+}
+
+func BenchmarkNonEmptyAdjustedSlice100(b *testing.B) {
+	// sshhh pretend we don't know how many their
+	// are.
+	people := genPeople(100)
+	b.ReportAllocs()
+	b.ResetTimer()
+
+	for i := 0; i < b.N; i++ {
+		names := make([]string, 0, 1000)
+		for _, person := range people {
+			names = append(names, person.name)
+		}
+	}
+}
+
+func BenchmarkNonEmptyAdjustedSlice47(b *testing.B) {
+	// sshhh pretend we don't know how many their
+	// are.
+	people := genPeople(47)
+	b.ReportAllocs()
+	b.ResetTimer()
+
+	for i := 0; i < b.N; i++ {
+		names := make([]string, 0, 1000)
+		for _, person := range people {
+			names = append(names, person.name)
+		}
+	}
+}
+
+func BenchmarkNonEmptyAdjustedSlice10(b *testing.B) {
+	// sshhh pretend we don't know how many their
+	// are.
+	people := genPeople(10)
+	b.ReportAllocs()
+	b.ResetTimer()
+
+	for i := 0; i < b.N; i++ {
+		names := make([]string, 0, 1000)
+		for _, person := range people {
+			names = append(names, person.name)
+		}
+	}
+}
+
+func BenchmarkNonEmptyAdjustedSlice1(b *testing.B) {
+	// sshhh pretend we don't know how many their
+	// are.
+	people := genPeople(1)
+	b.ReportAllocs()
+	b.ResetTimer()
+
+	for i := 0; i < b.N; i++ {
+		names := make([]string, 0, 1000)
+		for _, person := range people {
+			names = append(names, person.name)
+		}
+	}
+}
