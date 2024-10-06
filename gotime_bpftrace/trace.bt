@@ -1,5 +1,6 @@
 #!/usr/bin/bpftrace
 
-uprobe:/home/paul/Projects/blog_work/gotime_bpftrace/gotime_bpftrace:main.print_time {
-	printf("wall: %d, ext: %d, loc: %d\n", (uint64) reg("bx"), reg("ax"), (uint64) reg("cx"))
+uprobe:/usr/local/bin/gotime_bpftrace:main.print_parts,
+uprobe:/usr/local/bin/gotime_bpftrace:main.print_time {
+	printf(" { \"wall\": %llu, \"ext\": %lld } \n", (uint64)reg("ax"), (int64)reg("bx"));
 }

@@ -1,0 +1,7 @@
+Can golang reorder the fields? Nope:
+ref: https://stackoverflow.com/questions/26818011/does-the-order-of-members-in-a-struct-matter 
+
+Remove one word at a time from an integer and show it as a uint (correcting for size):
+https://go.dev/play/p/ttpDmVdguZ2
+
+It seems that BPF trace can only use structs from header files and c source code, and can't run any of the c code when looking at things.
